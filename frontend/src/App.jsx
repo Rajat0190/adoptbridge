@@ -1,27 +1,18 @@
-import { useEffect, useState } from 'react'
-import { supabase } from './supabase'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import Dashboard from './pages/Dashboard'
 
 function App() {
-  const [connected, setConnected] = useState(false)
-
-  useEffect(() => {
-    async function testConnection() {
-      const { data, error } = await supabase.from('profiles').select('*')
-      if (!error) {
-        setConnected(true)
-      }
-    }
-    testConnection()
-  }, [])
-
   return (
-    <div style={{ textAlign: 'center', marginTop: '100px' }}>
-      <h1>AdoptBridge 🌉</h1>
-      {connected 
-        ? <p style={{ color: 'green' }}>✅ Database Connected!</p>
-        : <p style={{ color: 'orange' }}>Connecting to database...</p>
-      }
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
