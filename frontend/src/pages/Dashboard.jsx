@@ -60,11 +60,17 @@ function Dashboard() {
           </p>
 
           {profile.role === 'parent' && (
-            <div className="bg-indigo-50 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-indigo-700 mb-2">Parent Dashboard</h3>
-              <p className="text-gray-600">Browse children profiles and find your perfect match.</p>
-            </div>
-          )}
+  <div className="bg-indigo-50 rounded-xl p-6">
+    <h3 className="text-lg font-semibold text-indigo-700 mb-2">Parent Dashboard</h3>
+    <p className="text-gray-600 mb-4">Browse children profiles and find your perfect match.</p>
+    <button
+      onClick={() => navigate('/parent-profile')}
+      className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition font-medium"
+    >
+      Complete My Profile
+    </button>
+  </div>
+)}
 
 {profile.role === 'ngo' && (
   <div className="bg-green-50 rounded-xl p-6">
