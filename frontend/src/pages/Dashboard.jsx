@@ -66,12 +66,18 @@ function Dashboard() {
             </div>
           )}
 
-          {profile.role === 'ngo' && (
-            <div className="bg-green-50 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-green-700 mb-2">NGO Dashboard</h3>
-              <p className="text-gray-600">Register children and manage their profiles and assessments.</p>
-            </div>
-          )}
+{profile.role === 'ngo' && (
+  <div className="bg-green-50 rounded-xl p-6">
+    <h3 className="text-lg font-semibold text-green-700 mb-2">NGO Dashboard</h3>
+    <p className="text-gray-600 mb-4">Register children and manage their profiles and assessments.</p>
+    <button
+      onClick={() => navigate('/child-profile')}
+      className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition font-medium"
+    >
+      + Register a Child
+    </button>
+  </div>
+)}
 
           {profile.role === 'admin' && (
             <div className="bg-orange-50 rounded-xl p-6">
