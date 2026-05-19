@@ -76,12 +76,20 @@ function Dashboard() {
   <div className="bg-green-50 rounded-xl p-6">
     <h3 className="text-lg font-semibold text-green-700 mb-2">NGO Dashboard</h3>
     <p className="text-gray-600 mb-4">Register children and manage their profiles and assessments.</p>
-    <button
-      onClick={() => navigate('/child-profile')}
-      className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition font-medium"
-    >
-      + Register a Child
-    </button>
+    <div className="flex gap-3 flex-wrap">
+      <button
+        onClick={() => navigate('/child-profile')}
+        className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition font-medium"
+      >
+        + Register a Child
+      </button>
+      <button
+        onClick={() => navigate('/assessment')}
+        className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition font-medium"
+      >
+        📝 Take Assessment
+      </button>
+    </div>
   </div>
 )}
 
