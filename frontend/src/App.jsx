@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard'
 import ChildProfile from './pages/ChildProfile'
 import ParentProfile from './pages/ParentProfile'
 import Assessment from './pages/Assessment'
+import Leaderboard from './pages/Leaderboard'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/child-profile" element={<ChildProfile />} />
         <Route path="/parent-profile" element={<ParentProfile />} />
         <Route path="/assessment" element={<Assessment />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
     </BrowserRouter>
   )
