@@ -59,102 +59,98 @@ function Dashboard() {
             You are logged in as <span className="font-semibold text-indigo-600 capitalize">{profile.role}</span>
           </p>
 
-          {profile.role === 'parent' && (
-  <div className="bg-indigo-50 rounded-xl p-6">
-    <h3 className="text-lg font-semibold text-indigo-700 mb-2">Parent Dashboard</h3>
-    <p className="text-gray-600 mb-4">Browse children profiles and find your perfect match.</p>
-    <button
-      onClick={() => navigate('/parent-profile')}
-      className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition font-medium"
-    >
-      Complete My Profile
-    </button>
-  </div>
-)}
+          <div className="space-y-4">
+            {profile.role === 'parent' && (
+              <div className="bg-indigo-50 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-indigo-700 mb-2">Parent Dashboard</h3>
+                <p className="text-gray-600 mb-4">Browse children profiles and find your perfect match.</p>
+                <div className="flex gap-3 flex-wrap">
+                  <button
+                    onClick={() => navigate('/parent-profile')}
+                    className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition font-medium"
+                  >
+                    Complete My Profile
+                  </button>
+                  <button
+                    onClick={() => navigate('/browse')}
+                    className="bg-pink-600 text-white px-6 py-2 rounded-lg hover:bg-pink-700 transition font-medium"
+                  >
+                    💙 Browse Children
+                  </button>
+                  <button
+                    onClick={() => navigate('/leaderboard')}
+                    className="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition font-medium"
+                  >
+                    🏆 Leaderboard
+                  </button>
+                </div>
+              </div>
+            )}
 
-{profile.role === 'ngo' && (
-  <div className="space-y-4">
-  {profile.role === 'parent' && (
-    <div className="bg-indigo-50 rounded-xl p-6">
-      <h3 className="text-lg font-semibold text-indigo-700 mb-2">Parent Dashboard</h3>
-      <p className="text-gray-600 mb-4">Browse children profiles and find your perfect match.</p>
-      <div className="flex gap-3 flex-wrap">
-        <button
-          onClick={() => navigate('/parent-profile')}
-          className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition font-medium"
-        >
-          Complete My Profile
-        </button>
-        <button
-          onClick={() => navigate('/leaderboard')}
-          className="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition font-medium"
-        >
-          🏆 View Leaderboard
-        </button>
-      </div>
-    </div>
-  )}
+            {profile.role === 'ngo' && (
+              <div className="bg-green-50 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-green-700 mb-2">NGO Dashboard</h3>
+                <p className="text-gray-600 mb-4">Register children and manage their profiles and assessments.</p>
+                <div className="flex gap-3 flex-wrap">
+                  <button
+                    onClick={() => navigate('/child-profile')}
+                    className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition font-medium"
+                  >
+                    + Register a Child
+                  </button>
+                  <button
+                    onClick={() => navigate('/assessment')}
+                    className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition font-medium"
+                  >
+                    📝 Take Assessment
+                  </button>
+                  <button
+                    onClick={() => navigate('/leaderboard')}
+                    className="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition font-medium"
+                  >
+                    🏆 Leaderboard
+                  </button>
+                  <button
+                    onClick={() => navigate('/badges')}
+                    className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition font-medium"
+                  >
+                    🏅 My Badges
+                  </button>
+                </div>
+              </div>
+            )}
 
-  {profile.role === 'ngo' && (
-    <div className="bg-green-50 rounded-xl p-6">
-      <h3 className="text-lg font-semibold text-green-700 mb-2">NGO Dashboard</h3>
-      <p className="text-gray-600 mb-4">Register children and manage their profiles and assessments.</p>
-      <div className="flex gap-3 flex-wrap">
-        <button
-          onClick={() => navigate('/child-profile')}
-          className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition font-medium"
-        >
-          + Register a Child
-        </button>
-        <button
-          onClick={() => navigate('/assessment')}
-          className="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition font-medium"
-        >
-          📝 Take Assessment
-        </button>
-        <button
-          onClick={() => navigate('/leaderboard')}
-          className="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition font-medium"
-        >
-          🏆 Leaderboard
-        </button>
-        <button
-  onClick={() => navigate('/badges')}
-  className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition font-medium"
->
-  🏅 My Badges
-</button>
-      </div>
-    </div>
-  )}
-
-  {profile.role === 'admin' && (
-    <div className="bg-orange-50 rounded-xl p-6">
-      <h3 className="text-lg font-semibold text-orange-700 mb-2">Admin Dashboard</h3>
-      <p className="text-gray-600 mb-4">Manage all users, verify profiles and oversee the platform.</p>
-      <div className="flex gap-3 flex-wrap">
-        <button
-          onClick={() => navigate('/leaderboard')}
-          className="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition font-medium"
-        >
-          🏆 View Leaderboard
-        </button>
-      </div>
-    </div>
-  )}
-</div>
-)}
-
-          {profile.role === 'admin' && (
-            <div className="bg-orange-50 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-orange-700 mb-2">Admin Dashboard</h3>
-              <p className="text-gray-600">Manage all users, verify profiles and oversee the platform.</p>
-            </div>
-          )}
+            {profile.role === 'admin' && (
+              <div className="bg-orange-50 rounded-xl p-6">
+                <h3 className="text-lg font-semibold text-orange-700 mb-2">Admin Dashboard</h3>
+                <p className="text-gray-600 mb-4">Manage all users, verify profiles and oversee the platform.</p>
+                <div className="flex gap-3 flex-wrap">
+                  <button
+                    onClick={() => navigate('/admin')}
+                    className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition font-medium"
+                  >
+                    ⚙️ Admin Panel
+                  </button>
+                  <button
+                    onClick={() => navigate('/leaderboard')}
+                    className="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600 transition font-medium"
+                  >
+                    🏆 Leaderboard
+                  </button>
+                  <button
+                    onClick={() => navigate('/browse')}
+                    className="bg-pink-600 text-white px-6 py-2 rounded-lg hover:bg-pink-700 transition font-medium"
+                  >
+                    💙 Browse Children
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
   )
 }
 
-export default Dashboard    
+export default Dashboard
